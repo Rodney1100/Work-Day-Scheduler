@@ -1,5 +1,5 @@
 var rightNow = moment().format("MMMM Do, YYYY - hh:mm a") + " ";
-var hrNow = moment().format("h");
+var hrNow = moment().format("HH");
 $("#currentDay").append(rightNow);
 
 var time9 = document.getElementById("9time")
@@ -14,7 +14,7 @@ var time17 = document.getElementById("17time")
 
 function calTime(hour) {
     var bt = hour
-    if (bt < 9) {
+    if (bt < 9 && bt > 17) {
         time17.classList.remove("present")
         time9.classList.remove("past")
         time10.classList.remove("past")
@@ -25,21 +25,17 @@ function calTime(hour) {
         time15.classList.remove("past")
         time16.classList.remove("past")
         time17.classList.remove("past")
-        console.log("under 9")
     }
     if (bt == 9) {
         time9.classList.remove("future")
         time9.classList.add("present")
-        console.log("9")
     }
     if (bt == 10) {
-        console.log("10")
         time9.classList.add("past")
         time9.classList.remove("future")
         time10.classList.remove("future")
         time10.classList.add("present")
     } else if (bt == 11) {
-        console.log("11")
         time9.classList.add("past")
         time9.classList.remove("future")
         time11.classList.remove("future")
@@ -47,7 +43,6 @@ function calTime(hour) {
         time10.classList.add("past")
         time11.classList.add("present")
     } else if (bt == 12) {
-        console.log("12")
         time9.classList.add("past")
         time10.classList.add("past")
         time11.classList.add("past")
@@ -58,7 +53,6 @@ function calTime(hour) {
         time11.classList.remove("present")
         time12.classList.add("present")
     } else if (bt == 13) {
-        console.log("13")
         time9.classList.add("past");
         time10.classList.add("past");
         time11.classList.add("past");
@@ -89,7 +83,6 @@ function calTime(hour) {
         time13.classList.remove("present");
         time14.classList.add("present");
     } else if (bt == 15) {
-        console.log("15")
         time9.classList.add("past");
         time10.classList.add("past");
         time11.classList.add("past");
@@ -109,8 +102,6 @@ function calTime(hour) {
         time14.classList.remove("present");
         time15.classList.add("present");
     } else if (bt == 16) {
-        console.log("16")
-        console.log("15");
         time9.classList.add("past");
         time10.classList.add("past");
         time11.classList.add("past");
@@ -125,6 +116,7 @@ function calTime(hour) {
         time13.classList.remove("future");
         time14.classList.remove("future");
         time15.classList.remove("future");
+        time16.classList.remove("future");
         time11.classList.remove("present");
         time12.classList.remove("present");
         time13.classList.remove("present");
@@ -132,11 +124,33 @@ function calTime(hour) {
         time15.classList.remove("present");
         time16.classList.add("present");
     } else if (bt == 17) {
-        console.log("17")
+        time9.classList.add("past");
+        time10.classList.add("past");
+        time11.classList.add("past");
+        time12.classList.add("past");
+        time13.classList.add("past");
+        time14.classList.add("past");
+        time15.classList.add("past");
+        time16.classList.add("past");
+        time9.classList.remove("future");
+        time10.classList.remove("future");
+        time11.classList.remove("future");
+        time12.classList.remove("future");
+        time13.classList.remove("future");
+        time14.classList.remove("future");
+        time15.classList.remove("future");
+        time16.classList.remove("future");
+        time17.classList.remove("future");
+        time11.classList.remove("present");
+        time12.classList.remove("present");
+        time13.classList.remove("present");
+        time14.classList.remove("present");
+        time15.classList.remove("present");
+        time16.classList.remove("present");
+        time17.classList.add("present");
     }
-
 }
-calTime(16)
+calTime(15)
     // console.log(hrNow)
 
 $("#9x").on("click", function() {
