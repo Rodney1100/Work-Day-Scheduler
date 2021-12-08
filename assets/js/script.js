@@ -150,7 +150,7 @@ function calTime(hour) {
         time17.classList.add("present");
     }
 }
-calTime(15)
+calTime(hrNow)
     // console.log(hrNow)
 
 $("#9x").on("click", function() {
