@@ -9,5 +9,6 @@ you can click the save button to save your task.
 
 you can click on the text box to chage the task or add new ones for that hour.
 
-![picture of application](./assets/image/workDaySchedule.PNG)
+<!-- ![picture of application](/assets/image/workDaySchedule.PNG) -->
+![picture of application](/assets/image/workDaySchedule.png)
 
