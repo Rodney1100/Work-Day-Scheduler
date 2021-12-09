@@ -1,7 +1,9 @@
+// setting the date
 var rightNow = moment().format("MMMM Do, YYYY - hh:mm a") + " ";
-var hrNow = moment().format("HH");
 $("#currentDay").append(rightNow);
-
+// setting the var that goes in to change the time colors
+var hrNow = moment().format("HH");
+// getting the elements for the time
 var time9 = document.getElementById("9time")
 var time11 = document.getElementById("11time")
 var time10 = document.getElementById("10time")
@@ -11,7 +13,7 @@ var time14 = document.getElementById("14time")
 var time15 = document.getElementById("15time")
 var time16 = document.getElementById("16time")
 var time17 = document.getElementById("17time")
-
+    // changing the color for the time.
 function calTime(hour) {
     var bt = hour
     if (bt < 9 && bt > 17) {
@@ -25,12 +27,10 @@ function calTime(hour) {
         time15.classList.remove("past")
         time16.classList.remove("past")
         time17.classList.remove("past")
-    }
-    if (bt == 9) {
+    } else if (bt == 9) {
         time9.classList.remove("future")
         time9.classList.add("present")
-    }
-    if (bt == 10) {
+    } else if (bt == 10) {
         time9.classList.add("past")
         time9.classList.remove("future")
         time10.classList.remove("future")
@@ -150,9 +150,9 @@ function calTime(hour) {
         time17.classList.add("present");
     }
 }
+// calling the function
 calTime(hrNow)
-    // console.log(hrNow)
-
+    // saving with a click of the save btn for each time slot and storing the item texted in
 $("#9x").on("click", function() {
 
     var inTime = time9.value;
@@ -227,15 +227,15 @@ $("#16x").on("click", function() {
     }
 })
 $("#17x").on("click", function() {
-    var inTime8 = time17.value;
-    saveList(inTime8);
+        var inTime8 = time17.value;
+        saveList(inTime8);
 
-    function saveList(timeValIn) {
-        var timeValOut9 = timeValIn;
-        localStorage.setItem("timeValOut9", JSON.stringify(timeValOut9));
-    }
-})
-
+        function saveList(timeValIn) {
+            var timeValOut9 = timeValIn;
+            localStorage.setItem("timeValOut9", JSON.stringify(timeValOut9));
+        }
+    })
+    // loading the saved items to put the text on the times. 
 loadSaveList1()
 
 function loadSaveList1() {
