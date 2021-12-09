@@ -1,7 +1,7 @@
 # week4challenge
 ## Work Day Scheduler
 Link to page -->
-https://rodney1100.github.io/week5challenge/
+https://rodney1100.github.io/week5challenge-/
 
 This application allows users to plan out their day with time slots the change to green for future hour, red for current hour and gray for hours that has passed that day already.
 
